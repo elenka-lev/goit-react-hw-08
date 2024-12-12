@@ -1,0 +1,19 @@
+.mainContainer {
+    background: linear-gradient(149deg, #e5f8f2 0%, #dcfdf2 42%, #feffff 72%,#a0fcdd 100%);
+    animation: gradient 6s infinite linear; 
+    background-size: 400%;
+    padding-bottom: 20px;
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 50% 100%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

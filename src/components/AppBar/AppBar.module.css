@@ -1,0 +1,76 @@
+.container {
+    max-width: 320px;
+    background: url(../../assets/img/mob-bg-1.png);
+    background-position: top right;
+        background-size: cover;
+        background-repeat: no-repeat;
+    min-height: 375px;
+    /* margin-bottom: 20px; */
+}
+
+.title {
+    color:black;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    margin-left: 240px;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.nav {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+}
+@media (min-width: 768px) {
+    .container {
+        max-width: 100%;
+        background: url(../../assets/img/tab-bg-1.png);
+        background-position: top right;
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+    }
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+    .title {
+        margin-left: 30px;
+    }
+   .nav {
+    position: static;
+    margin-right: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+   }
+   .link {
+    color: #14865C;
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    &:hover {
+        /* -webkit-text-stroke: 1px #14865C; якщо треба, щоб букви були з чыткими границями*/
+        color: #ffffff;
+    }
+   }
+   .active {
+    color: #ffffff;
+   }
+   
+
+}
+
+@media (min-width: 1280px) {
+    .container {
+        max-width: 100%;
+        background: url(../../assets/img/bg.png);
+        background-position: top left 50px;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}

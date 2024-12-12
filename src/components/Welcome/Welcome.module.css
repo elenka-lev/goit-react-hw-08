@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+}
+.title {
+    color: #14865C;
+}
+.video {
+    width: 280px;
+    height: 180px;
+    object-fit: cover;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+    .video {
+        width: 400px;
+        height: 250px;
+        object-fit: cover;
+    }
+}
+
+@media (min-width: 1280px) {
+    .video {
+        width: 600px;
+        height: 400px;
+        object-fit: cover;
+    }
+    .title {
+        font-size: 70px;
+    }
+    .descr {
+        font-size: 35px;
+    }
+}

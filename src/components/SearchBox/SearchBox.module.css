@@ -1,5 +1,6 @@
 .container {
     max-width: 320px;
+
 }
 .input {
     border-radius: 30px;
@@ -12,6 +13,7 @@
     margin-bottom: 10px;
     outline: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-left: 20px;
 }
 .input[placeholder] {
     color:rgb(97, 96, 96);
@@ -24,9 +26,13 @@
 @media (min-width: 768px) {
     .container {
         max-width: 768px;
+        
     }
     .input {
+        display: block;
         width: 300px;
+        margin: 0 auto;
+        margin-bottom: 25px;
     }
 }
 @media (min-width: 1280px) {

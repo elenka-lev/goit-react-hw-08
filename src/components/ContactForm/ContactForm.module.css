@@ -39,7 +39,7 @@
     cursor: pointer;
     height: 49px;
     width: 100%;
-    max-width: 282px;
+    max-width: 262px;
     font-weight: 600;
     font-size: 15px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -58,6 +58,8 @@
 @media (min-width: 768px) and (max-width: 1279px){
     .container {
         max-width: 768px;
+        display: flex;
+        justify-content: center;
     }
     .form {
         width: 370px;
@@ -78,6 +80,7 @@
 @media (min-width: 1280px) {
     .container {
         max-width: 1280px;
+        padding-top: 20px;
     }
     .form {
         display: flex;
