@@ -2,14 +2,14 @@ import s from './AppBar.module.css';
 import { NavLink } from 'react-router-dom';
 
 import clsx from 'clsx';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectUser, selectLoggedIn } from '../../redux/auth/selectors';
-import { logout } from '../../redux/auth/operations';
+import UserMenu from '../UserMenu/UserMenu';
 
 const AppBar = () => {
     const isLoggedIn = useSelector(selectLoggedIn);
     const user = useSelector(selectUser);
-    const dispatch = useDispatch();
+    
 
 
     const buildLinkClass = ({ isActive }) => {
@@ -32,7 +32,7 @@ const AppBar = () => {
                         <NavLink to="/login" className={buildLinkClass}>Login</NavLink>
                         <NavLink to="/register" className={buildLinkClass }>Register</NavLink>
                         </>)}
-                    {isLoggedIn && <button type='submit' onClick={()=>dispatch(logout())} className={s.btn}>Logout</button>}
+                    {isLoggedIn && <UserMenu/>}
                 </nav>
             </div>
         </header>
