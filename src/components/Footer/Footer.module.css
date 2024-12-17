@@ -1,0 +1,29 @@
+.footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #66FFCC;
+    color: #14865C;
+    padding: 20px 0;
+}
+
+.links {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.icon {
+    color: #14865C;
+    font-size: 50px;
+    transition: color 0.3s ease;
+}
+.icon:hover{
+    color: #fff;
+}
+
+.icon-link:hover .icon {
+    color: white;
+}
