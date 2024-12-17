@@ -1,12 +1,18 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import s from './ContactList.module.css';
 import Contact from '../Contact/Contact';
 
 import { selectFilteredContacts } from '../../redux/contacts/selectors';
+import { useEffect } from 'react';
+import { fetchContacts } from '../../redux/contacts/operations';
 
 
 const ContactList = () => {
-   
+   const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchContacts())
+    }, [dispatch])
     
     const filter = useSelector(selectFilteredContacts);
     
@@ -15,7 +21,7 @@ const ContactList = () => {
             <ul className={s.wrapper}>
                 {filter.map((contact) => (
                     <li key={contact.id} className={s.item}>
-                        <Contact contact={contact} id={contact.id} />
+                        <Contact name={contact.name} number={contact.number} id={contact.id} />
                     </li>
                 ))}
             </ul>

@@ -4,10 +4,8 @@
 // import SearchBox from './SearchBox/SearchBox';
 // import ContactList from './ContactList/ContactList';
 // import Loading from './Loading/Loading';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { fetchContacts } from '../redux/contacts/operations';
-// import { selectIsLoading } from '../redux/contacts/selectors';
+// import { useDispatch, useSelector } from 'react-redux';
+
 import { Route, Routes } from 'react-router-dom';
 import Layout from './Layout/Layout';
 import Home from '../pages/Home/Home';
@@ -18,11 +16,6 @@ import RegistrationPage from '../pages/RegistrationPage/RegistrationPage'
 
 const App = () => {
     // const isLoading = useSelector(selectIsLoading)
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(fetchContacts())
-    }, [dispatch])
 
     return (
         <Routes>

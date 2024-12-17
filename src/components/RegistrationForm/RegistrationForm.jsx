@@ -4,12 +4,22 @@ import { useId } from 'react';
 import { useDispatch } from 'react-redux';
 import * as Yup from "yup";
 import { register } from '../../redux/auth/operations';
+import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const RegistrationForm = () => {
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   const handleSubmit = (values, options) => {
-    dispatch(register(values));
+    //unwrap перевіряє, чи новий користувач, буде або помилка, або перехід до контактів 
+    dispatch(register(values))
+      .unwrap()
+      .then(res => {
+        toast(`Welcome, ${res?.user?.name}`);
+        navigate('/contacts')
+      }).catch(() => {
+        toast.error('There is such a user, try again or login')
+      });
     options.resetForm()
   }
 
@@ -27,7 +37,8 @@ const RegistrationForm = () => {
 });
     const userLogin = useId();
     const userPassword = useId();
-    const userName = useId()
+  const userName = useId()
+  
     const initialValues = {
         name: '',
         email: '',
@@ -38,7 +49,7 @@ const RegistrationForm = () => {
             <h2 className={s.formTitle}>Register a new account</h2>
             <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
                 <Form className={s.form}>
-                    <label className={s.label} htmlFor={userName}>Enter your password</label>
+                    <label className={s.label} htmlFor={userName}>Enter your name</label>
                     <Field type='text' className={s.input} name='name' id={userName} />
                     <ErrorMessage name="password" component="span" className={s.error} />
 

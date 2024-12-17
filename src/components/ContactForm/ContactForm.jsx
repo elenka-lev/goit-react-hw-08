@@ -1,7 +1,7 @@
 import s from './ContactForm.module.css';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/contacts/operations';
+import { addContact, fetchContacts } from '../../redux/contacts/operations';
 import { useId } from 'react';
 import * as Yup from "yup";
 
@@ -29,6 +29,7 @@ const ContactForm = () => {
         }
         dispatch(addContact(newContact))
         options.resetForm()
+        dispatch(fetchContacts());
     }
     
     return (

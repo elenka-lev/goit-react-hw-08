@@ -1,5 +1,6 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit"
 import { deleteContact, fetchContacts, addContact } from "./operations";
+import { logout } from "../auth/operations";
 
 
 
@@ -16,6 +17,10 @@ const slice = createSlice({
         builder
             .addCase(fetchContacts.fulfilled, (state, action) => {
                 state.items = action.payload;
+            })
+            //вдалити контакти з поля зору
+            .addCase(logout.fulfilled, () => {
+                return initialState;
             })
             .addCase(fetchContacts.pending, (state) => {
                 state.loading = true;
